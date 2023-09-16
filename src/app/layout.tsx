@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import Provider from './provider'
+import Provider from './Provider'
+import { Box, Flex } from '@chakra-ui/react'
+import Sidebar from './_components/NavigationMenu'
 
 export const metadata: Metadata = {
   title: 'SHAREDRAGON',
@@ -14,7 +16,18 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Flex>
+            {' '}
+            {/* Chakra UIのFlexコンポーネントを使用してレイアウトを作成 */}
+            <Sidebar /> {/* サイドバーを追加 */}
+            <Box flex="1">
+              {' '}
+              {/* メインコンテンツエリア */}
+              {children}
+            </Box>
+          </Flex>
+        </Provider>
       </body>
     </html>
   )
