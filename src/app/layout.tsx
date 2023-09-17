@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 }
 
 const notoSans = Noto_Sans_JP({ subsets: ['latin'] })
-
 export default function RootLayout({
   children,
 }: {
@@ -23,13 +22,9 @@ export default function RootLayout({
       <body className={notoSans.className}>
         <Provider>
           <Flex>
-            {' '}
-            {/* Chakra UIのFlexコンポーネントを使用してレイアウトを作成 */}
             <UpBar />
-            <Sidebar /> {/* サイドバーを追加 */}
+            <Sidebar />
             <Box flex="1">
-              {' '}
-              {/* メインコンテンツエリア */}
               <Box height={16}></Box>
               {children}
             </Box>
