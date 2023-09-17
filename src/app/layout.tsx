@@ -18,14 +18,8 @@ export default function RootLayout({
       <body>
         <Provider>
           <Flex>
-            {' '}
-            {/* Chakra UIのFlexコンポーネントを使用してレイアウトを作成 */}
-            <Sidebar /> {/* サイドバーを追加 */}
-            <Box flex="1">
-              {' '}
-              {/* メインコンテンツエリア */}
-              {children}
-            </Box>
+            <Sidebar />
+            <Box flex="1">{children}</Box>
           </Flex>
         </Provider>
       </body>

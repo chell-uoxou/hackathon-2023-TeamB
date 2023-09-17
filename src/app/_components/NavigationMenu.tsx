@@ -48,7 +48,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Box as="nav" width="240px" p={4} bg="gray.100" height="100vh">
+    <Box as="nav" width="220px" p={4} bg="gray.100" height="100vh">
       <VStack justify="center" alignItems="left" spacing={3}>
         {navMenuItems.map((e) => {
           return (
