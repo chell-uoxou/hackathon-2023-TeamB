@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import style from './page.module.css'
 import DigitalDateTime from './DigitalDateTime'
+import NotificationBell from '@/app/_components/ui/NotificationBell'
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
         ></Image>
         <p>never forget your original intention</p>
         <DigitalDateTime />
+        <NotificationBell hasNew={false} />
+        {/* あとでいじります */}
       </div>
     </main>
   )
