@@ -14,21 +14,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
-      <body>
-        <Provider>
-          <Flex>
-            {' '}
-            {/* Chakra UIのFlexコンポーネントを使用してレイアウトを作成 */}
-            <Sidebar /> {/* サイドバーを追加 */}
-            <Box flex="1">
+    <>
+      <head>
+        <link
+          rel="icon"
+          href="/favicon.png"
+          type="/Users/yanokeita/Downloads/favicon_package_v0.16 (1)/favicon-16x16.png/png"
+        ></link>
+      </head>
+      <html lang="ja">
+        <body>
+          <Provider>
+            <Flex>
               {' '}
-              {/* メインコンテンツエリア */}
-              {children}
-            </Box>
-          </Flex>
-        </Provider>
-      </body>
-    </html>
+              {/* Chakra UIのFlexコンポーネントを使用してレイアウトを作成 */}
+              <Sidebar /> {/* サイドバーを追加 */}
+              <Box flex="1">
+                {' '}
+                {/* メインコンテンツエリア */}
+                {children}
+              </Box>
+            </Flex>
+          </Provider>
+        </body>
+      </html>
+    </>
   )
 }
