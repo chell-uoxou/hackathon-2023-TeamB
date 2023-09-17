@@ -1,9 +1,12 @@
 'use client'
 
 import { Box, Link, VStack } from '@chakra-ui/react'
-import { Bank, Cube, Gear, House, Wallet } from '@phosphor-icons/react'
+import { Bank, Cube, Gear, House, Trash, Wallet } from '@phosphor-icons/react'
 import { usePathname, useRouter } from 'next/navigation'
 import NavigationMenuItem from './ui/NavigationMenuItem'
+import NewEntryButton from './ui/NewEntryButton'
+import CommunitySelector from './ui/CommutitySelector'
+import MyAvatar from './ui/MyAvatar'
 
 export default function Sidebar() {
   const iconSize = 22
@@ -48,8 +51,17 @@ export default function Sidebar() {
   }
 
   return (
-    <Box as="nav" width="220px" p={4} bg="gray.100" height="100vh">
-      <VStack justify="center" alignItems="left" spacing={3}>
+    <Box as="nav" width="240px" p={4} bg="gray.100" height="100vh">
+      <VStack
+        justify="center"
+        alignItems="left"
+        spacing={3}
+        margin={'auto'}
+        height={'100%'}
+      >
+        <CommunitySelector />
+        <NewEntryButton />
+
         {navMenuItems.map((e) => {
           return (
             <NavigationMenuItem
@@ -62,6 +74,8 @@ export default function Sidebar() {
             </NavigationMenuItem>
           )
         })}
+        <Box flexGrow={2}></Box>
+        <MyAvatar />
       </VStack>
     </Box>
   )
