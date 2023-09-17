@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import style from './page.module.css'
+import DigitalDateTime from './DigitalDateTime'
 
 export default function Home() {
   return (
@@ -11,8 +14,8 @@ export default function Home() {
           height={150}
           alt="next logo"
         ></Image>
-        <p>don't forget your original intention</p>
-        <p>2023/09/17</p>
+        <p>never forget your original intention</p>
+        <DigitalDateTime />
       </div>
     </main>
   )
