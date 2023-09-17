@@ -53,6 +53,7 @@ export default function Sidebar() {
         {navMenuItems.map((e) => {
           return (
             <NavigationMenuItem
+              key={e.href}
               icon={isCurrent(e.href) ? e.enabledIcon : e.disabledIcon}
               href={e.href}
               isCurrent={isCurrent(e.href)}
