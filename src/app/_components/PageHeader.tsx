@@ -11,7 +11,7 @@ export default function PageHeader(props: Props) {
       <VStack
         alignItems={'flex-start'}
         marginTop={5}
-        marginBottom={5}
+        marginBottom={7}
         marginLeft={12}
       >
         <Text fontSize={'40px'} fontWeight={'700'} marginBottom={-3}>
