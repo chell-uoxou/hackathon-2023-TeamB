@@ -7,6 +7,7 @@ import NavigationMenuItem from './ui/NavigationMenuItem'
 import NewEntryButton from './ui/NewEntryButton'
 import CommunitySelector from './ui/CommutitySelector'
 import MyAvatar from './ui/MyAvatar'
+import { globalState } from '../_stores/globalState'
 
 export default function NavigationMenu() {
   const iconSize = 24
@@ -50,8 +51,16 @@ export default function NavigationMenu() {
     return pathName.startsWith(href)
   }
 
+  const dragonMode = globalState.dragonMode
+
   return (
-    <Box as="nav" width="260px" p={4} bg="gray.100" height="100vh">
+    <Box
+      as="nav"
+      width="260px"
+      p={4}
+      bg={dragonMode ? 'green.300' : 'gray.100'}
+      height="100vh"
+    >
       <VStack
         justify="center"
         alignItems="left"
