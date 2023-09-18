@@ -3,6 +3,7 @@
 import PageHeader from '@/app/_components/PageHeader'
 import ChakraInputWithTitle from '@/app/_components/ui/ChakraInputWithTitle'
 import PrimaryButton from '@/app/_components/ui/PrimaryButton'
+import SecondaryButton from '@/app/_components/ui/SecondaryButton'
 import { Box, Center, Flex, HStack, VStack } from '@chakra-ui/react'
 import { PlusCircle } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
@@ -16,7 +17,6 @@ export default function Page() {
   const router = useRouter()
   return (
     <>
-      <h1>new_form</h1>
       <PageHeader
         title="合計金額を支払う"
         description="スーパーなど、日常的な買い物に"
@@ -60,17 +60,27 @@ export default function Page() {
         />
       </VStack>
       <Flex margin={10} flexDirection={'column'} alignItems={'center'}>
-        <PrimaryButton
-          isLoading={isSubmitting}
-          size={'lg'}
-          label="登録する"
-          icon={<PlusCircle size={'24px'} />}
-          paddingLR={100}
-          onClick={() => {
-            setSubmitting(true)
-            router.push('/entry')
-          }}
-        />
+        <HStack>
+          <SecondaryButton
+            size={'lg'}
+            label="戻る"
+            paddingLR={100}
+            onClick={() => {
+              router.push('/entry/new')
+            }}
+          />
+          <PrimaryButton
+            isLoading={isSubmitting}
+            size={'lg'}
+            label="登録する"
+            icon={<PlusCircle size={'24px'} />}
+            paddingLR={100}
+            onClick={() => {
+              setSubmitting(true)
+              router.push('/entry')
+            }}
+          />
+        </HStack>
       </Flex>
     </>
   )
