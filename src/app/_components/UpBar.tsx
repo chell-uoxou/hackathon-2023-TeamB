@@ -17,7 +17,9 @@ import {
   useColorModeValue,
   Stack,
   Container,
+  Center,
 } from '@chakra-ui/react'
+import { AppLogo } from './ui/AppLogo'
 
 interface Props {
   children: React.ReactNode
@@ -46,8 +48,6 @@ const NavLink = (props: Props) => {
 }
 
 export default function UpBar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
   return (
     <>
       <Box
@@ -57,19 +57,9 @@ export default function UpBar() {
         height={16}
         width={'100%'}
       >
-        <HStack justifyContent={'center'} alignItems={'center'}>
-          <Text>SHAREDRAGON</Text>
-        </HStack>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
+        <Center height={'100%'}>
+          <AppLogo />
+        </Center>
       </Box>
     </>
   )

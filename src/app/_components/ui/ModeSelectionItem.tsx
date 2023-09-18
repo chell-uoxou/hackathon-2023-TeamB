@@ -7,6 +7,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react'
+import { useRouter } from 'next/navigation'
 
 import { type } from 'os'
 import { ReactElement } from 'react'
@@ -19,12 +20,15 @@ type Props = {
 }
 
 export default function ModeSelectionItem(props: Props) {
+  const href = '/entry/new_form'
+  const router = useRouter()
   return (
     <Card
       flexGrow={1}
       backgroundColor={'gray.50'}
       boxShadow={'xs'}
       rounded={'xl'}
+      onClick={() => router.push(href)}
     >
       <CardBody>
         <VStack justifyContent={'center'}>

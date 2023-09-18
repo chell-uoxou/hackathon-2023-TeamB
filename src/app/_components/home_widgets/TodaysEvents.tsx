@@ -12,7 +12,7 @@ type Props = {
 
 export default function TodaysEvents(props: Props) {
   return (
-    <Card width={'100%'} padding={3}>
+    <Card width={'100%'} padding={3} boxShadow={'xs'} bg={'gray.50'}>
       <HStack>
         <Box w={'200px'}>
           <AvatarGroup size="sm" max={3}>

@@ -67,8 +67,8 @@ export default function Page() {
 
   return (
     <>
-      <h1>home</h1>
       <PageHeader title="おはようございます、瀬谷さん" description="ぎゃおー" />
+      <PageSubtitle title="今月の出費ペース" />
       <Box width={'50%'} marginLeft={12}>
         <DailyExpenseTrackChart />
       </Box>
