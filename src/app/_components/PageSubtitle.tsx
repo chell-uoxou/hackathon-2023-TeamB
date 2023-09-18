@@ -12,7 +12,7 @@ export default function PageSubtitle(props: Props) {
       marginBottom={5}
       marginLeft={12}
     >
-      <Text fontSize={'24px'} fontWeight={'700'}>
+      <Text fontSize={'20px'} fontWeight={'700'}>
         {props.title}
       </Text>
     </VStack>

@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import Provider from './Provider'
 import { Box, Flex } from '@chakra-ui/react'
-import Sidebar from './_components/NavigationMenu'
+import NavigationMenu from './_components/NavigationMenu'
 import UpBar from './_components/UpBar'
-import MyAvatar from './_components/ui/MyAvatar'
 import { Noto_Sans_JP } from 'next/font/google'
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
         <Provider>
           <Flex>
             <UpBar />
-            <Sidebar />
+            <NavigationMenu />
             <Box flex="1">
               <Box height={16}></Box>
               {children}

@@ -1,0 +1,14 @@
+.pageAnim-enter {
+  opacity: 0;
+}
+.pageAnim-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.pageAnim-exit {
+  opacity: 1;
+}
+.pageAnim-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

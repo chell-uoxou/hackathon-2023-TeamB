@@ -15,6 +15,7 @@ import { collection, getDocs } from 'firebase/firestore/lite'
 import { db } from '@/app/_utils/firebase'
 import { getEntriesByCommunity as getEntriesByCommunityId } from '@/app/_stores/firestore/community_collections/entries'
 import { getCommunities } from '@/app/_stores/firestore/communities'
+import PageHeader from '@/app/_components/PageHeader'
 
 export default function Page() {
   const [entries, setEntries] = useState<any[]>([])
@@ -40,27 +41,33 @@ export default function Page() {
   }
 
   return (
-    <TableContainer>
-      <Table variant="simple">
-        {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
-        <Thead>
-          <Tr>
-            <Th>品目</Th>
-            <Th>メンバー</Th>
-            <Th isNumeric>合計金額</Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {entries.map((entry, index) => (
-            <Tr key={index}>
-              <Td>{entry.displayName}</Td>
-              <Td>{entry.fundingMembers.length}</Td>{' '}
-              {/* fundingMembersは配列なので、その長さを表示します */}
-              <Td isNumeric>{formatYen(entry.totalPrice)}</Td>
+    <>
+      <PageHeader
+        title="アイテム一覧"
+        description="コミュニティ内の勘定項目一覧です"
+      />
+      <TableContainer>
+        <Table variant="simple">
+          {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
+          <Thead>
+            <Tr>
+              <Th>品目</Th>
+              <Th>メンバー</Th>
+              <Th isNumeric>合計金額</Th>
             </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </TableContainer>
+          </Thead>
+          <Tbody>
+            {entries.map((entry, index) => (
+              <Tr key={index}>
+                <Td>{entry.displayName}</Td>
+                <Td>{entry.fundingMembers.length}</Td>{' '}
+                {/* fundingMembersは配列なので、その長さを表示します */}
+                <Td isNumeric>{formatYen(entry.totalPrice)}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </>
   )
 }

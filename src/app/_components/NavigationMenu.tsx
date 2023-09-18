@@ -8,8 +8,8 @@ import NewEntryButton from './ui/NewEntryButton'
 import CommunitySelector from './ui/CommutitySelector'
 import MyAvatar from './ui/MyAvatar'
 
-export default function Sidebar() {
-  const iconSize = 22
+export default function NavigationMenu() {
+  const iconSize = 24
   const iconWeight = 'regular'
   const navMenuItems = [
     {
@@ -40,7 +40,7 @@ export default function Sidebar() {
       disabledIcon: <Gear weight={iconWeight} size={iconSize} />,
       enabledIcon: <Gear weight={'fill'} size={iconSize} />,
       label: '設定',
-      href: '/settings',
+      href: '/preferences',
     },
   ]
 
@@ -51,7 +51,7 @@ export default function Sidebar() {
   }
 
   return (
-    <Box as="nav" width="240px" p={4} bg="gray.100" height="100vh">
+    <Box as="nav" width="260px" p={4} bg="gray.100" height="100vh">
       <VStack
         justify="center"
         alignItems="left"

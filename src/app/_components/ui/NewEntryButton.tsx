@@ -16,7 +16,7 @@ const NewEntryButton = () => {
         router.push('/entry/new')
       }}
     >
-      <Text fontSize={'16px'} fontWeight="bold">
+      <Text fontSize={'18px'} fontWeight="700" transform="translateY(-1px)">
         登録
       </Text>
     </Button>

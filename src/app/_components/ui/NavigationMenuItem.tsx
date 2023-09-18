@@ -29,7 +29,7 @@ const NavigationMenuItem = (props: Props) => {
           }}
         >
           <Box width="5px" />
-          <Text fontSize={'16px'} fontWeight="bold">
+          <Text fontSize={'18px'} fontWeight="700" transform="translateY(-1px)">
             {props.children}
           </Text>
         </Button>
